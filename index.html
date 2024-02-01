@@ -1,29 +1,24 @@
 <!DOCUMENT html>
-<html>
+    <html>
+
     <head>
         <meta charset="UTF-8">
 
-        <!-- ‼️config here 在这里配置姓名等 -->
         <script>
-            /* (字符串)姓名 最多六个字符 不然可能会有点问题 实际上是懒得调样式 如果可以的话可以自己改 */
-            name = "A-SOUL"; 
+            name = "稗田阿求";
 
-            /* (URL 字符串)输入一寸照片的 URL，或者是 base64 数组。 */
-            picture = "https://cdn.alexhaohao.com/asoulwiki/2021/07/20210719084508900.png?x-oss-process=image/auto-orient,1/quality,q_90/format,webp"; 
-            reverse_picture_color = true; /* (布尔值)是否将图片反色 */
+            picture = "./akyuu.png";
 
-            /* (字符串)在这里写一些介绍和生前逸事 */
-            introduction = "A-SOUL 是由乐华娱乐与字节跳动共同推出的虚拟女子偶像团体，共有<i>五</i>名成员，分别是向晚Ava、贝拉Bella、<!--珈乐Carol、-->嘉然Diana、乃琳Eileen。<br><br>生前逸事：制作委员会压榨中之人员工，138 元的舰长中之人仅能得 7 角钱。QA 打太极、隐瞒员工伤情、PUA 员工，而后为了逼迫员工续约将员工隐私暴露在互联网上。其发现可能团队为了完全压榨员工，可能进行了（未考证）以低价购买中之人的脸模并运用到游戏里、高强度收集中之人声音进行人工智能训练，以便后续 AI 直播，且 AI 直播包含软色情。更多出生的内容可以前往微博 <i>#A-SOUL成员遭遇公司PUA# #A-soul制作委员会致歉# #A-SOUL称不存在霸凌压榨成员情况# #抵制字节跳动剥削员工#</i> 等 Tag 了解。"; 
-
-            
+            introduction = "<b>稗田阿求</b>(百九季文月之一-百三十九季文月之一)，女，人类，幻想乡人，第九代御阿礼之子<del>，曾任幻想乡中央委员会第一书记，伟大的人类政治家、作家，是全乡全人里人类公认的享有崇高威望的卓越领导者。她改变了幻想乡——(开门查水表!!!</del>";
         </script>
 
-        <!-- 网页头 -->
+        <script
+            type="text/javascript">var prompt = confirm("醒醒 阿求还没死呢\n为阿求续2048秒 ↓↓"); if (prompt) { window.location.href = "https://akyuu.touhou.moe/"; }</script>
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.css">
+        <link rel="shortcut icon" href="./akyuu.ico">
         <script src="./bootstrap/js/bootstrap.js"></script>
         <script src="./jquery.js"></script>
-        <script src="./lottie.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
         <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <style>
@@ -31,148 +26,121 @@
                 background: black;
                 color: white;
             }
+
             .container {
                 max-width: 720px;
             }
+
             #RenShengZiGu {
-                border-style:solid;
-                border-width:2px;
+                border-style: solid;
+                border-width: 2px;
                 border-radius: 7px;
                 border-color: white;
                 background-color: black;
                 padding: .2em;
                 font-size: 20px;
             }
+
+            #binghongcha {
+                opacity: .8;
+                width: 150px;
+                height: 150px;
+                background: url(binghongcha.png);
+                background-size: contain;
+                position: fixed;
+                top: 0;
+                color: #fff;
+            }
+
+            #akyuu {
+                width: 150px;
+                height: 200px;
+                background: url(akyuu.png);
+                background-size: contain;
+                position: fixed;
+                top: 0;
+                color: #fff;
+            }
+
+            #xiaobuding {
+                width: 100px;
+                height: 100px;
+                background: url(xiaobuding.png);
+                background-size: contain;
+                position: fixed;
+                top: 0;
+                color: #fff;
+            }
+
             #Sheiwusi {
                 margin-left: .3em;
                 color: white;
             }
+
             #Lilium_formosanum_var_pricei {
                 width: 5vw;
                 border-radius: 5px;
             }
+
             #LingTang {
                 position: relative;
             }
+
             #Picture_Border {
                 position: relative;
                 width: 100%;
                 max-width: 320px;
                 min-width: 300px;
-                left: 50%;            
+                left: 50%;
                 transform: translateX(-50%);
                 pointer-events: none;
                 filter: invert(1) hue-rotate(180deg);
             }
+
             #Dead_Picture {
                 position: absolute;
                 width: 18%;
                 min-width: 130px;
-                left: 50%;            
-                transform: translate(-50%, 120px); 
-                
+                left: 50%;
+                transform: translate(-50%, 120px);
+
             }
-            .Dead_Picture_Light {
-                filter: grayscale(100%) blur(3px);
-            }
+
             #big_name {
                 position: relative;
                 text-align: center;
                 font-size: 3em;
                 text-transform: capitalize;
                 border: thin solid;
-                border-width:2px;
+                border-width: 2px;
                 border-radius: 7px;
                 width: 65%;
                 left: 50%;
                 font-weight: 900;
                 transform: translateX(-50%);
             }
-            #tips {
-                color: gray;
-            }
-            #tips::after {
-                content: "（🖱/👆 ↓）";
-            }
-            @keyframes UpStream_animation {
-                0% {
-                    transform: translate(-50%, 120px); 
-                }
-                25% {
-                    transform: translate(-49%, 100px); 
-                }
-                27% {
-                    transform: translate(-32%, 90px); 
-                }
-                30% {
-                    transform: translate(-70%, 80px); 
-                }
-                40% {
-                    transform: translate(-49%, 70px); 
-                }
-                60% {
-                    transform: translate(-40%, 50px); 
-                }
-                700% {
-                    transform: translate(-70%, 80px); 
-                }
-                73% {
-                    transform: translate(-49%, 70px); 
-                }
-                75% {
-                    transform: translate(-40%, 50px); 
-                }
-                78% {
-                    transform: translate(-50%, 90px); 
-                }
-                80% {
-                    transform: translate(-70%, 80px); 
-                }
-                83% {
-                    transform: translate(-49%, 70px); 
-                }
-                89% {
-                    transform: translate(-40%, 50px); 
-                }
-                100% {
-                    transform: translate(-50%, 120px); 
-                }
-            }
-            .UpStream_animation {animation: 1s UpStream_animation;}
-            @keyframes HideAnimation{
-                0%{opacity: 100%;}
-                50%{opacity: 0%;}
-                100%{opacity: 100%;}
-            }
-            .Hide_animation {animation: 1s HideAnimation;}
-            @keyframes Bigger {
-                0%{width: 18%;}
-                50%{width: 40%;}
-                100%{width: 18%;}
-            }
-            .Bigger {animation: 2s Bigger;}
-            #Champagne{
-                width: 10em;
-                left: 50%;            
-                transform: translate(270%, -80%); 
-            }
-            #Champagne svg {
-                height: auto !important;
-            }
+
             @keyframes disappear {
-                0% {opacity: 100%;}
-                100% {opacity: 0%;}
+                0% {
+                    opacity: 100%;
+                }
+
+                100% {
+                    opacity: 0%;
+                }
             }
+
             .disappear {
-                animation: 3s disappear;
-                animation-delay: 426ms;
+                animation: 2s disappear;
+                animation-delay: 200ms;
                 animation-fill-mode: forwards;
                 pointer-events: none;
             }
+
             #loading {
                 position: fixed;
-                background-color: white;
-                color: black;
+                background-color: black;
+                color: white;
                 height: 100vh;
                 width: 100vw;
                 top: 0;
@@ -182,47 +150,68 @@
                 justify-content: center;
                 align-items: center;
             }
+
             .loading_text {
                 font-size: 5.6vw;
             }
+
             @keyframes dot_loading {
-                0% {opacity: 100%;}
-                25% {opacity: 0%;}
-                100% {opacity: 100%;}
+                0% {
+                    opacity: 100%;
+                }
+
+                25% {
+                    opacity: 0%;
+                }
+
+                100% {
+                    opacity: 100%;
+                }
             }
+
             #dot_loading_1 {
                 animation: 3s dot_loading infinite;
                 animation-delay: 300ms;
             }
+
             #dot_loading_2 {
                 animation: 3s dot_loading infinite;
                 animation-delay: 600ms;
             }
+
             #dot_loading_3 {
                 animation: 3s dot_loading infinite;
                 animation-delay: 900ms;
             }
-            .reverse_color {
-                filter: grayscale(100%) blur(3px) invert(1) hue-rotate(180deg);
-            }
-            @keyframes CancelBlur {
-                0%{filter: grayscale(100%) blur(3px);}
-                50%{filter: grayscale(0%) blur(0px);}
-                100%{filter: grayscale(100%) blur(3px);}
-            }
-            .CancelBlur {animation: 1s CancelBlur}
-            @keyframes CancelBlur_Reverse {
-                0%{filter: grayscale(100%) blur(3px) invert(1) hue-rotate(180deg);}
-                50%{filter: grayscale(0%) blur(0px) invert(0) hue-rotate(0deg);}
-                100%{filter: grayscale(100%) blur(3px) invert(1) hue-rotate(180deg);}
-            }
-            .CancelBlur_Reverse {animation: 1s CancelBlur_Reverse}
         </style>
-        <title>电子灵堂异常：你可能没有加载 JavaScript。</title>
+        <title>加载中(太久可能是JS寄了)</title>
     </head>
+
+    <body>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+        <div id='aplayer'></div>
+        <script>
+            var ap = new APlayer
+                ({
+                    element: document.getElementById('aplayer'),
+                    showlrc: false,
+                    fixed: true,
+                    mini: true,
+                    audio: {
+                        title: '想你了牢求',
+                        author: '竹ノ花',
+                        url: './music.mp3',
+                        pic: './music.jpg'
+                    }
+                });
+            ap.init();
+        </script>
+    </body>
+
     <body>
         <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+            content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
         <div class="container">
             <div class="page-header">
                 <h1 class="title" id="title">JavaScript required.</h1>
@@ -230,107 +219,163 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td><img alt="Lilium formosanum var pricei.jpg" src="Lilium_formosanum_var_pricei.jpg" id="Lilium_formosanum_var_pricei">
+                                <td><img alt="Lilium formosanum var pricei.jpg" src="Lilium_formosanum_var_pricei.jpg"
+                                        id="Lilium_formosanum_var_pricei">
                                 </td>
-                                <td><div id="Sheiwusi">人生自古谁无死？不幸的，<span style="margin:.0em .2em .0em .2em; padding: .0em .2em .0em .2em; border-radius: 5px; border: thin solid; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""><b id="dead_nameInSheiwusi"></b></span>已经逝世，因此无法继续与您互动，让我们永远缅怀它。</div>
+                                <td>
+                                    <div id="Sheiwusi">人生自古谁无死？不幸的，<span
+                                            style="margin:.0em .2em .0em .2em; padding: .0em .2em .0em .2em; border-radius: 5px; border: thin solid; --darkreader-inline-border-top: initial; --darkreader-inline-border-right: initial; --darkreader-inline-border-bottom: initial; --darkreader-inline-border-left: initial;"
+                                            data-darkreader-inline-border-top="" data-darkreader-inline-border-right=""
+                                            data-darkreader-inline-border-bottom=""
+                                            data-darkreader-inline-border-left=""><b
+                                                id="dead_nameInSheiwusi"></b></span>已经去见小町，因此无法继续编写这季缘起，让我们永远缅怀她。</div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <a href="https://github.com/ASOULFucker/Lingtang_OnInternet/">开源</a> <i id="tips">继续向下滚动查看更多</i>
             </div>
-            <!-- 分割线后 主体 -->
             <div id="LingTang">
                 <img alt="逝者照片" src="" class="Dead_Picture_Light" id="Dead_Picture">
-                <img alt="灵堂相框" src="./电子灵堂.png" id="Picture_Border">
-                <div style="position: absolute;"><div id="Champagne"></div></div>
+                <img alt="灵堂相框" src="./border.png" id="Picture_Border">
+                <div style="position: absolute;">
+                </div>
                 <h3 id="big_name">未启用 JavaScript。</h3>
                 <p id="life_introduction">未启用 JavaScript。</p>
+                <p align="center"><iframe src="https://player.bilibili.com/player.html?aid=490426035&cid=1254132752&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></p>
                 <hr />
                 <h4 id="Gongpin">给 [] 送上贡品</h4>
                 <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" id="UpStream">上升气流</button>
-                    <button type="button" class="btn btn-default" id="HideCloth">隐藏遮羞布</button>
-                    <button type="button" class="btn btn-default" id="BiggerMamma">胸部变大（宽度窄的屏幕可能不生效）</button>
-                    <button type="button" class="btn btn-default" id="OpenChampagne">开香槟🍾（开多了会卡，不要作死）</button>
+                    <button type="button" class="btn btn-default" onclick="alert('距离击败胡跃林又进一步口也')">
+                        <p>助力复活赛</p>
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="alert('您所充值的用户不存在')">
+                        <p>续一秒</p>
+                    </button>
+                    <button type="button" class="btn btn-default" id="countbtn" onclick="alert('你上了一炷香')">
+                        <p id="count"></p>
+                    </button>
                 </div>
-                <hr />
-                <h4>留下致辞</h4>
-                <div id="gitalk-container"></div>
-            </div>
-        </div>
-
-        <div id="loading">
-                <p class="loading_text" id="loading_tips">你是不是没开 JavaScript？</p><p class="loading_text" id="dot_loading_1">.</p><p class="loading_text" id="dot_loading_2">.</p><p class="loading_text" id="dot_loading_3">.</p>
-        </div>
-        
-        <!-- 电子灵堂 主程序 -->
-        <script>
-            document.title = name+" 的电子灵堂";
-            document.getElementById("title").innerHTML = name+" 的电子灵堂";
-            document.getElementById("dead_nameInSheiwusi").innerHTML = name;
-            document.getElementById("Dead_Picture").src = picture;
-            document.getElementById("big_name").innerHTML = name;
-            document.getElementById("life_introduction").innerHTML = introduction;
-            document.getElementById("Gongpin").innerHTML = "给 "+ name +" 送上贡品";
-            document.getElementById("loading_tips").innerHTML = "马上就好";
-
-            /* Gitalk 评论区配置 */
-            var gitalk = new Gitalk({
-                clientID: 'be96a41462c84525e077',
-                clientSecret: '5be136bc48441c539d9203aa5c61dbadb42d3309',
-                repo: 'Lingtang_OnInternet',
-                owner: 'ASOULFucker',
-                admin: ['ASOULFucker'],
-                id: location.pathname,      // Ensure uniqueness and length less than 50
-                distractionFreeMode: false  // Facebook-like distraction free mode
-            });
-            gitalk.render('gitalk-container');
-
-            document.getElementById("UpStream").onclick = function(){
-                $('#Dead_Picture').addClass("UpStream_animation");
-                setTimeout(function(){$('#Dead_Picture').removeClass('UpStream_animation')},1100);
-            };
-            document.getElementById("HideCloth").onclick = function(){
-                if (reverse_picture_color) {
-                    $('#Picture_Border').addClass("Hide_animation");
-                    $('#Dead_Picture').addClass("CancelBlur_Reverse");
-                    setTimeout(function(){
-                        $('#Picture_Border').removeClass('Hide_animation');
-                        $('#Dead_Picture').removeClass('CancelBlur_Reverse');
-                    },1100);
-                console.log("Reversed.")
-                } else {
-                    $('#Picture_Border').addClass("Hide_animation");
-                    $('#Dead_Picture').addClass("CancelBlur");
-                    setTimeout(function(){
-                        $('#Picture_Border').removeClass('Hide_animation');
-                        $('#Dead_Picture').removeClass('CancelBlur');
-                    },1100);
-                }
-                
-            };
-            document.getElementById("BiggerMamma").onclick = function(){
-                $('#Dead_Picture').addClass("Bigger");
-                setTimeout(function(){$('#Dead_Picture').removeClass('Bigger')},2000);
-            };
-            document.getElementById("OpenChampagne").onclick = function(){
-                lottie.loadAnimation({
-                container: Champagne, // 容器节点
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'champagne.json' // JSON文件路径
-                });
-            };
-            if (reverse_picture_color) {
-                $('#Dead_Picture').addClass("reverse_color");
-                $('#Dead_Picture').removeClass('Dead_Picture_Light');
-                console.log("Reversed.");
-            }
-            $('#loading').addClass('disappear');
-            console.log("Main done.")
-        </script>
+                <script>
+                    var countBtn = document.getElementById("countbtn");
+                    var countText = document.getElementById("count");
+                    var count = localStorage.getItem("clickCount") || 0;
+                    countText.textContent = "上香 " + count;
+                    countBtn.addEventListener("click", function () {
+                        count++;
+                        countText.textContent = "上香 " + count;
+                        localStorage.setItem("clickCount", count);
+                    });
+                </script>
     </body>
-</html>
+    <hr />
+    <h4>留下致辞</h4>
+    <div id="gitalk-container"></div>
+    </div>
+    </div>
+
+    <div id="loading">
+        <p class="loading_text" id="loading_tips">啥比QS又把页面写炸了</p>
+        <p class="loading_text" id="dot_loading_1">.</p>
+        <p class="loading_text" id="dot_loading_2">.</p>
+        <p class="loading_text" id="dot_loading_3">.</p>
+    </div>
+    <script>
+        document.title = "永远缅怀 稗田阿求";
+        document.getElementById("title").innerHTML = "阿求的奇妙电子灵堂";
+        document.getElementById("dead_nameInSheiwusi").innerHTML = name;
+        document.getElementById("Dead_Picture").src = picture;
+        document.getElementById("big_name").innerHTML = name;
+        document.getElementById("life_introduction").innerHTML = introduction;
+        document.getElementById("Gongpin").innerHTML = "给阿求送上贡品";
+        document.getElementById("loading_tips").innerHTML = "少女折寿中";
+
+        var gitalk = new Gitalk({
+            clientID: 'bfb1ab63270cdc12ca72',
+            clientSecret: 'be5cf24bf7683578ce9943e67159e272679d747e',
+            repo: 'akyuu-rip',
+            owner: 'akyuu-rip',
+            admin: ['akyuu-rip'],
+            id: location.pathname,
+            distractionFreeMode: true
+        });
+        gitalk.render('gitalk-container');
+        $('#loading').addClass('disappear');
+        console.log("Main done.")
+    </script>
+    <script>
+        window.onload = function () {
+            $(function () {
+                var wh = $(window).height();
+                var f = $(document).width();
+                setInterval(function () {
+                    var e = Math.random() * f - 40;
+                    var o = 8 * Math.random();
+                    var fon = 10 + Math.random() * 150;
+                    var l = e - 114 + 514 * Math.random();
+                    var k = 3777 + 3640 * Math.random();
+                    var html = "<div id='binghongcha'><div>";
+                    $(html).clone().appendTo("body").css({
+                        left: e + "px",
+                        opacity: o,
+                        "font-size": fon,
+                    }).animate({
+                        top: (wh * 2) + "px",
+                        left: l + "1px",
+                        opacity: 1,
+                    }, k, "linear", function () {
+                        $(this).remove()
+                    })
+                }, 514)
+            });
+            $(function () {
+                var wh = $(window).height();
+                var f = $(document).width();
+                setInterval(function () {
+                    var e = Math.random() * f - 150;
+                    var o = 1 * Math.random();
+                    var fon = 14 + Math.random() * 30;
+                    var l = e - 51 + 40 * Math.random();
+                    var k = 3980 + 1870 * Math.random();
+                    var html = "<div id='akyuu'><div>";
+                    $(html).clone().appendTo("body").css({
+                        left: e + "px",
+                        opacity: o,
+                        "font-size": fon,
+                    }).animate({
+                        top: (wh * 2) + "px",
+                        left: l + ".5px",
+                        opacity: 1,
+                    }, k, "linear", function () {
+                        $(this).remove()
+                    })
+                }, 810)
+            });
+            $(function () {
+                var wh = $(window).height();
+                var f = $(document).width();
+                setInterval(function () {
+                    var e = Math.random() * f - 150;
+                    var o = 1 * Math.random();
+                    var fon = 11 + Math.random() * 30;
+                    var l = e - 25 + 21 * Math.random();
+                    var k = 1994 + 2024 * Math.random();
+                    var html = "<div id='xiaobuding'><div>";
+                    $(html).clone().appendTo("body").css({
+                        left: e + "px",
+                        opacity: o,
+                        "font-size": fon,
+                    }).animate({
+                        top: (wh * 2) + "px",
+                        left: l + ".5px",
+                        opacity: 1,
+                    }, k, "linear", function () {
+                        $(this).remove()
+                    })
+                }, 893)
+            })
+        }
+    </script>
+    </body>
+
+    </html>
