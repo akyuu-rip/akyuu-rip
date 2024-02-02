@@ -12,8 +12,15 @@
             introduction = "<b>稗田 阿求</b>(百九季文月之一-百三十九季文月之一)，女，人类，幻想乡人，第九代御阿礼之子<del>，曾任幻想乡中央委员会第一书记，伟大的人类政治家、作家，是全乡全人里人类公认的享有崇高威望的卓越领导者。</del><br><del>她改变了幻想乡——(开门查水表!!!</del>";
         </script>
 
-        <script
-            type="text/javascript">var prompt = confirm("醒醒 阿求还没死呢\n为阿求续2048秒 ↓↓   (点取消进入灵堂)"); if (prompt) { window.location.href = "https://akyuu.touhou.moe/"; }</script>
+        <script type="text/javascript">
+            var targetdate = new Date('2024-08-08');
+            var currentdate = new Date();
+            var untildays = Math.ceil((targetdate - currentdate) / (1000 * 60 * 60 * 24));
+            var prompt = confirm('醒醒 阿求还没死呢 距离百三十九季文月之一还有' + untildays + '天\n为阿求续2048秒 ↓↓ (点取消进入灵堂) ');
+            if (prompt) {
+                window.location.href = "https://akyuu.touhou.moe/";
+            }
+        </script>
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.css">
         <link rel="shortcut icon" href="./akyuu.ico">
@@ -32,6 +39,10 @@
                 max-width: 720px;
             }
 
+            #title {
+                text-align: center;
+            }
+            
             #RenShengZiGu {
                 border-style: solid;
                 border-width: 2px;
@@ -61,6 +72,8 @@
                 position: fixed;
                 top: 0;
                 color: #fff;
+                animation: 1.8s linear 0s normal none infinite rotate;
+                -webkit-animation: 1.8s linear 0s normal none infinite rotate;
             }
 
             #xiaobuding {
